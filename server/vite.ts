@@ -1,3 +1,4 @@
+// server/vite.ts
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
@@ -19,7 +20,14 @@ export function log(message: string, source = "express") {
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
+/**
+ * Setup Vite in development mode (HMR + middleware)
+ */
 export async function setupVite(app: Express, server: Server) {
+  if (process.env.NODE_ENV !== "development") {
+    throw new Error("❌ setupVite() should only be used in development mode");
+  }
+
   const serverOptions = {
     middlewareMode: true,
     hmr: { server },
@@ -41,6 +49,7 @@ export async function setupVite(app: Express, server: Server) {
   });
 
   app.use(vite.middlewares);
+
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
 
@@ -52,12 +61,14 @@ export async function setupVite(app: Express, server: Server) {
         "index.html",
       );
 
-      // always reload the index.html file from disk incase it changes
       let template = await fs.promises.readFile(clientTemplate, "utf-8");
+
+      // Bust Vite cache on every reload
       template = template.replace(
         `src="/src/main.tsx"`,
         `src="/src/main.tsx?v=${nanoid()}"`,
       );
+
       const page = await vite.transformIndexHtml(url, template);
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {
@@ -67,18 +78,25 @@ export async function setupVite(app: Express, server: Server) {
   });
 }
 
+/**
+ * Serve static files in production
+ */
 export function serveStatic(app: Express) {
+  if (process.env.NODE_ENV !== "production") {
+    throw new Error("❌ serveStatic() should only be used in production mode");
+  }
+
   const distPath = path.resolve(import.meta.dirname, "public");
 
   if (!fs.existsSync(distPath)) {
     throw new Error(
-      `Could not find the build directory: ${distPath}, make sure to build the client first`,
+      `Could not find the build directory: ${distPath}, make sure to run "npm run build" first`,
     );
   }
 
   app.use(express.static(distPath));
 
-  // fall through to index.html if the file doesn't exist
+  // SPA fallback
   app.use("*", (_req, res) => {
     res.sendFile(path.resolve(distPath, "index.html"));
   });

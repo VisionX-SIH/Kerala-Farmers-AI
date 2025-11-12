@@ -1,6 +1,21 @@
+
+import dotenv from "dotenv";
+dotenv.config();
+
+
+import "dotenv/config";
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+
+// --- Safe check for environment variables ---
+if (!process.env.WEATHER_API_KEY) {
+  console.error("❌ Missing OpenWeather API key! Please check your .env file.");
+} else {
+  const key = process.env.WEATHER_API_KEY;
+  console.log(`✅ OpenWeather API key loaded (${key.slice(0, 4)}...${key.slice(-4)})`);
+}
+
 
 const app = express();
 app.use(express.json());
@@ -60,12 +75,11 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+    const port = parseInt(process.env.PORT || "5000", 10);
+  const host = process.env.HOST || "127.0.0.1"; // default localhost on Windows
+
+  server.listen(port, host, () => {
+    log(`✅ Server running at http://${host}:${port}`);
   });
 })();
+

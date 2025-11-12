@@ -23,7 +23,7 @@ export async function fetchWeatherData(location: string): Promise<WeatherRespons
   try {
     // Current weather
     const currentResponse = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=Kochi&appid=${apiKey}&units=metric`
     );
     
     if (!currentResponse.ok) {
@@ -34,7 +34,7 @@ export async function fetchWeatherData(location: string): Promise<WeatherRespons
     
     // 5-day forecast
     const forecastResponse = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`
+      `https://api.openweathermap.org/data/2.5/forecast?q=Kochi&appid=${apiKey}&units=metric`
     );
     
     if (!forecastResponse.ok) {

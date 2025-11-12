@@ -18,98 +18,122 @@ export const ChatBot = () => {
     let reply = "";
 
     if (userMessage.toLowerCase().includes("farming")) {
-      reply = "Farming is the backbone of our economy 🌱. Do you want info about crops, techniques, or markets?";
+      reply =
+        "Farming is the backbone of our economy 🌱. Do you want info about crops, techniques, or markets?";
     } else if (userMessage.toLowerCase().includes("crop")) {
       reply = "Which crop are you interested in? (Wheat, Rice, Maize, etc.)";
     } else if (userMessage.toLowerCase().includes("weather")) {
-      reply = "Weather plays a big role in farming ☀️🌧️. Do you want today's forecast or weekly details?";
+      reply =
+        "Weather plays a big role in farming ☀️🌧️. Do you want today's forecast or weekly details?";
     } else if (userMessage.toLowerCase().includes("today")) {
-      reply = "Today's weather is sunny with a high of 30°C and a low of 20°C. Perfect for farming! 🌞";
-    }
-      else if (userMessage.toLowerCase().includes("weekly")) {
-      reply = "This week looks great for farming! Expect sunny days with occasional showers. 🌤️🌦️";
-    }
-      else if (userMessage.toLowerCase().includes("bye")) {
+      reply =
+        "Today's weather is sunny with a high of 30°C and a low of 20°C. Perfect for farming! 🌞";
+    } else if (userMessage.toLowerCase().includes("weekly")) {
+      reply =
+        "This week looks great for farming! Expect sunny days with occasional showers. 🌤️🌦️";
+    } else if (userMessage.toLowerCase().includes("bye")) {
       reply = "Goodbye! 👋 Happy farming!";
-    }
-      else if (userMessage.toLowerCase().includes("help")) {
-      reply = "Sure! I'm here to assist you with farming-related queries. What do you need help with?";
-    }
-      else if (userMessage.toLowerCase().includes("tips")) {
-      reply = "Here are some farming tips: 1. Rotate your crops 🌾. 2. Use organic fertilizers 🌿. 3. Monitor soil health 🧪. Anything specific you want to know?";
-    }
-      else if (userMessage.toLowerCase().includes("market")) {
-      reply = "The current market prices are: Wheat - $200/ton, Rice - $250/ton, Maize - $180/ton. Prices may vary based on location and quality.";
-    }
-      else if (userMessage.toLowerCase().includes("price")) {
-      reply = "Which crop's price are you interested in? (Wheat, Rice, Maize, etc.)";
-    }
-      else if (userMessage.toLowerCase().includes("soil")) {
-      reply = "Soil health is crucial for good yields 🌱. Regularly test your soil, add organic matter, and avoid over-tilling. Need more details?";
-    }
-      else if (userMessage.toLowerCase().includes("pest")) {
-      reply = "Pest management is key to protecting your crops 🐛. Use integrated pest management (IPM) techniques and consider natural predators. Want specific advice?";
-    }
-      else if (userMessage.toLowerCase().includes("disease")) {
-      reply = "Crop diseases can be managed by crop rotation, resistant varieties, and proper field sanitation 🦠. Do you have a specific disease in mind?";
-    }
-      else if (userMessage.toLowerCase().includes("who developed you")) {
-      reply = "I was developed by the VisionX team to assist farmers with their queries. How can I help you today?";
-    }
-      else if (userMessage.toLowerCase().includes("who is saral garg")) {
-        reply = " Mr. Saral Garg, is a renowned faculty member in the Department of Data Science at RKGIT. He is highly respected for his expertise and his engaging way of teaching Web Development and other related subjects.";
-    }
-      else if (userMessage.toLowerCase().includes("what can krishi sahayi do")) {
-      reply = "Krishi Sahayi is your personal farming assistant! It can provide information on crops, weather, market prices, farming tips, pest management, and more. How can I assist you today?";
-    }
-    else if (userMessage.toLowerCase().includes("hello")) {
+    } else if (userMessage.toLowerCase().includes("help")) {
+      reply =
+        "Sure! I'm here to assist you with farming-related queries. What do you need help with?";
+    } else if (userMessage.toLowerCase().includes("tips")) {
+      reply =
+        "Here are some farming tips: 1. Rotate your crops 🌾. 2. Use organic fertilizers 🌿. 3. Monitor soil health 🧪. Anything specific you want to know?";
+    } else if (userMessage.toLowerCase().includes("market")) {
+      reply =
+        "The current market prices are: Wheat - $200/ton, Rice - $250/ton, Maize - $180/ton. Prices may vary based on location and quality.";
+    } else if (userMessage.toLowerCase().includes("price")) {
+      reply =
+        "Which crop's price are you interested in? (Wheat, Rice, Maize, etc.)";
+    } else if (userMessage.toLowerCase().includes("wheat price")) {
+      reply = "The current price of Wheat is $200/ton.";
+    } else if (userMessage.toLowerCase().includes("rice price")) {
+      reply = "The current price of Rice is $250/ton.";
+    } else if (userMessage.toLowerCase().includes("maize price")) {
+      reply = "The current price of Maize is $180/ton.";
+    } else if (userMessage.toLowerCase().includes("soil")) {
+      reply =
+        "Soil health is crucial for good yields 🌱. Regularly test your soil, add organic matter, and avoid over-tilling. Need more details?";
+    } else if (userMessage.toLowerCase().includes("pest")) {
+      reply =
+        "Pest management is key to protecting your crops 🐛. Use integrated pest management (IPM) techniques and consider natural predators. Want specific advice?";
+    } else if (userMessage.toLowerCase().includes("disease")) {
+      reply =
+        "Crop diseases can be managed by crop rotation, resistant varieties, and proper field sanitation 🦠. Do you have a specific disease in mind?";
+    } else if (userMessage.toLowerCase().includes("who developed you")) {
+      reply =
+        "I was developed by the VisionX team to assist farmers with their queries. How can I help you today?";
+    } else if (userMessage.toLowerCase().includes("who is saral garg")) {
+      reply =
+        "Mr. Saral Garg is a renowned faculty member in the Department of Data Science at RKGIT. He is highly respected for his expertise and engaging way of teaching Web Development and related subjects.";
+    } else if (userMessage.toLowerCase().includes("what can krishi sahayi do")) {
+      reply =
+        "Krishi Sahayi is your personal farming assistant! It can provide information on crops, weather, market prices, farming tips, pest management, and more. How can I assist you today?";
+    } else if (userMessage.toLowerCase().includes("hello")) {
       reply = "Hello! 👋 How can I help you today?";
     } else if (userMessage.toLowerCase().includes("thank")) {
-      reply = "You're welcome! 😊 If you have more questions, feel free to ask.";
+      reply =
+        "You're welcome! 😊 If you have more questions, feel free to ask.";
     } else if (userMessage.toLowerCase().includes("wheat")) {
-      reply = "Wheat is a staple crop 🌾. It requires well-drained soil and moderate rainfall. Anything specific you want to know?";
+      reply =
+        "Wheat is a staple crop 🌾. It requires well-drained soil and moderate rainfall. Anything specific you want to know?";
     } else if (userMessage.toLowerCase().includes("rice")) {
-      reply = "Rice thrives in warm, wet conditions 🌾💧. It needs plenty of water during its growing season. Any particular aspect you're curious about?";
+      reply =
+        "Rice thrives in warm, wet conditions 🌾💧. It needs plenty of water during its growing season. Any particular aspect you're curious about?";
     } else if (userMessage.toLowerCase().includes("maize")) {
-      reply = "Maize, or corn, is a versatile crop 🌽. It prefers well-drained soil and full sun. Do you want tips on cultivation or pest management?";
+      reply =
+        "Maize, or corn, is a versatile crop 🌽. It prefers well-drained soil and full sun. Do you want tips on cultivation or pest management?";
     } else if (userMessage.toLowerCase().includes("technique")) {
-      reply = "There are various farming techniques like crop rotation, no-till farming, and organic farming 🌱. Which one would you like to know more about?";
-    } 
-      else if (userMessage.toLowerCase().includes("organic")) {
-      reply = "Organic farming avoids synthetic chemicals and focuses on natural processes 🌿. It improves soil health and biodiversity. Interested in starting organic farming?";
-    } 
-      else if (userMessage.toLowerCase().includes("crop rotation")) {
-      reply = "Crop rotation involves changing the type of crop grown in a particular area each season 🌾➡️🌽➡️🌻. It helps maintain soil fertility and reduce pests. Want to know more ?";
-    }
-    else if (userMessage.toLowerCase().includes("no-till")) {
-      reply = "No-till farming minimizes soil disturbance by leaving the previous year's crop residue on the field 🌱. It helps improve soil health and reduce erosion. Need more details?";
-    }
-     else if (userMessage.toLowerCase().includes("fertilizer")) {
-      reply = "Fertilizers provide essential nutrients to crops 🌿. There are organic and synthetic options. It's important to use them judiciously to avoid environmental harm. Want recommendations?";
-    }
-     else if (userMessage.toLowerCase().includes("irrigation")) {
-      reply = "Irrigation is crucial for crop growth 💧. Common methods include drip, sprinkler, and surface irrigation. The choice depends on the crop and local conditions. Need help choosing?";
-    }
-     else if (userMessage.toLowerCase().includes("harvest")) {
-      reply = "Harvesting at the right time ensures maximum yield and quality 🌾. It varies by crop, so it's important to monitor maturity closely. Do you need tips on harvesting a specific crop?";
-    }
-      else if (userMessage.toLowerCase().includes("how are you different from other ai")) {
-        reply ="Krishi Sahayi stands out from other farming assistants by being Malayalam-first, designed in the farmer’s own dialect, and offering personalized AI advisory based on each farmer’s land, soil, and crop profile. Unlike generic tools, it provides proactive alerts such as weather warnings, pest outbreak notifications, and government scheme reminders. With its Kerala-specific knowledge base and scalable design, Krishi Sahayi delivers accurate, farmer-friendly guidance that supports decision-making across the entire crop cycle.";
-    }
-      else if (userMessage.toLowerCase().includes("farmers in rural kerala may not be tech savvy how will they actually use your solution")) {
-        reply = " That’s exactly why we built VisionX as voice-first in Malayalam. Farmers don’t need to type or navigate menus—just speak naturally, like they do every day. We’ve also designed it to be offline-capable, so even in areas with poor internet, they can still log activities and get reminders." ;
-    }
-      else if (userMessage.toLowerCase().includes("what is your business model")) {
-        reply = "We plan to offer a freemium model—basic features free for all farmers, with premium features like advanced analytics, personalized consulting, and market insights available via subscription. We may also explore partnerships with agri-input suppliers and local cooperatives for additional revenue streams.";
-    }
-      else if (userMessage.toLowerCase().includes("mvp")) {
-        reply = "Our MVP is a voice-first chatbot in Malayalam that provides personalized farming advice based on user-inputted farm details. It includes features like weather forecasts, pest/disease identification, and market price updates. We’re focusing on usability and relevance to Kerala farmers.";
-    }
-      else if (userMessage.toLowerCase().includes("how will this solution be financially sustainable")) {
-       reply = "Initially, it can be supported through government and NGO partnerships that focus on farmer welfare. Later, we can build premium services like crop insurance integration, marketplace linkages, or advanced analytics for larger farmers, while keeping the core assistant free for small farmers."      ;
-    }  
-    else {
-      reply = "  I didn’t quite get that 🤔.I am still learning. Could you rephrase?";
+      reply =
+        "There are various farming techniques like crop rotation, no-till farming, and organic farming 🌱. Which one would you like to know more about?";
+    } else if (userMessage.toLowerCase().includes("organic")) {
+      reply =
+        "Organic farming avoids synthetic chemicals and focuses on natural processes 🌿. It improves soil health and biodiversity. Interested in starting organic farming?";
+    } else if (userMessage.toLowerCase().includes("crop rotation")) {
+      reply =
+        "Crop rotation involves changing the type of crop grown in a particular area each season 🌾➡️🌽➡️🌻. It helps maintain soil fertility and reduce pests. Want to know more?";
+    } else if (userMessage.toLowerCase().includes("no-till")) {
+      reply =
+        "No-till farming minimizes soil disturbance by leaving the previous year's crop residue on the field 🌱. It helps improve soil health and reduce erosion. Need more details?";
+    } else if (userMessage.toLowerCase().includes("fertilizer")) {
+      reply =
+        "Fertilizers provide essential nutrients to crops 🌿. There are organic and synthetic options. It's important to use them judiciously to avoid environmental harm. Want recommendations?";
+    } else if (userMessage.toLowerCase().includes("irrigation")) {
+      reply =
+        "Irrigation is crucial for crop growth 💧. Common methods include drip, sprinkler, and surface irrigation. The choice depends on the crop and local conditions. Need help choosing?";
+    } else if (userMessage.toLowerCase().includes("harvest")) {
+      reply =
+        "Harvesting at the right time ensures maximum yield and quality 🌾. It varies by crop, so it's important to monitor maturity closely. Do you need tips on harvesting a specific crop?";
+    } else if (
+      userMessage
+        .toLowerCase()
+        .includes("how are you different from other ai")
+    ) {
+      reply =
+        "Krishi Sahayi stands out by being Malayalam-first, voice-enabled, and personalized for Kerala farmers 🌾. It provides local weather alerts, pest warnings, and government scheme updates — all in simple Malayalam.";
+    } else if (
+      userMessage
+        .toLowerCase()
+        .includes("farmers in rural kerala may not be tech savvy")
+    ) {
+      reply =
+        "That’s exactly why we built VisionX as voice-first in Malayalam. Farmers don’t need to type — they can simply speak naturally. It’s also offline-capable for poor internet areas.";
+    } else if (userMessage.toLowerCase().includes("what is your business model")) {
+      reply =
+        "We plan to offer a freemium model: basic features free for all farmers, and premium features like advanced analytics, consulting, and market insights via subscription.";
+    } else if (userMessage.toLowerCase().includes("mvp")) {
+      reply =
+        "Our MVP is a voice-first chatbot in Malayalam that gives personalized farming advice. It covers weather forecasts, pest/disease ID, and market price updates.";
+    } else if (
+      userMessage
+        .toLowerCase()
+        .includes("how will this solution be financially sustainable")
+    ) {
+      reply =
+        "Initially, it can be supported via government or NGO partnerships. Later, premium services like crop insurance, marketplace integration, or analytics can sustain it financially.";
+    } else {
+      reply =
+        "I didn’t quite get that 🤔. I’m still learning. Could you rephrase?";
     }
 
     return reply;
@@ -125,7 +149,7 @@ export const ChatBot = () => {
     setTimeout(() => {
       const response = {
         id: Date.now() + 1,
-        text: handleBotResponse(inputText), // <-- dynamic response here
+        text: handleBotResponse(inputText),
         isUser: false,
       };
       setMessages((prev) => [...prev, response]);

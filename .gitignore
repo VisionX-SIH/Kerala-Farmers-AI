@@ -1,6 +1,96 @@
-node_modules
-dist
+# =========================
+# 📦 Dependencies
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# 🏗️ Build & Output
+# =========================
+dist/
+build/
+out/
+coverage/
+
+# =========================
+# ⚙️ Configuration & Cache
+# =========================
+*.tsbuildinfo
+package-lock.json
+yarn.lock
+
+# =========================
+# 🔒 Environment Files
+# =========================
+.env
+.env.*
+!.env.example  # keep a safe example file if you use one
+
+# =========================
+# 🪟 System Files
+# =========================
 .DS_Store
-server/public
-vite.config.ts.*
+Thumbs.db
+*.swp
+*.swo
+
+# =========================
+# 🧠 IDE / Editor Configs
+# =========================
+.vscode/
+.idea/
+*.code-workspace
+
+# =========================
+# 🧾 Logs & Temporary
+# =========================
+logs/
+*.log
+*.tmp
+temp/
+tmp/
+*.bak
+
+# =========================
+# 📦 Archives / Compressed
+# =========================
+*.tar
 *.tar.gz
+*.zip
+*.rar
+*.7z
+
+# =========================
+# 🧩 Project-specific
+# =========================
+# Public or generated assets
+server/public/
+uploads/
+
+# TypeScript build configs
+vite.config.*.ts
+vite.config.ts.*
+
+# If you use Firebase or other auto-generated public folders
+firebase-debug.log
+
+# =========================
+# 💻 OS / Tooling Specific
+# =========================
+# Replit / Codespaces / Others
+.replit
+.history/
+.sass-cache/
+.cache/
+.parcel-cache/
+
+# =========================
+# ⚡ Optional (uncomment if used)
+# =========================
+# prisma/
+# .next/
+# .nuxt/
+# .vercel/
+# functions/
